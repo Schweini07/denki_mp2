@@ -1,0 +1,45 @@
+<!DOCTYPE html><html lang="en"><head>
+    <title>Chart.js example</title>
+  </head>
+  <body>
+    <div style="width: 500px"><canvas id="dimensions"></canvas></div>
+    <br>
+    <!-- <div style="width: 800px"><canvas id="acquisitions"></canvas></div> -->
+
+    <input type="number" id="ratioInput">
+    <!-- <button id="testBut">Set Aspect Ratio</button> -->
+    <br>
+
+    <label>Chart Type</label>
+    <select name="chartType" id="chartTypeInput">
+      <option value="bar">Bar</option>
+      <option value="bubble">Bubble</option>
+      <option value="line">Line</option>
+      <option value="scatter">Scatter</option>
+    </select>
+    <!-- <button id="chartTypeSubmit">Set Chart Type</button> -->
+    <br>
+
+    <label>X-Axis Scale Type</label>
+    <select name="xScaleType" id="xScaleTypeInput">
+      <option value="linear">Linear</option>
+      <option value="logarithmic">Logarithmic</option>
+    </select>
+
+    <p></p>
+
+    <label>Y-Axis Scale Type</label>
+    <select name="yScaleType" id="yScaleTypeInput">
+      <option value="linear">Linear</option>
+      <option value="logarithmic">Logarithmic</option>
+    </select>
+
+    <p></p>
+
+    <button id="renderButton">Render</button>
+
+    <!-- <script type="module" src="acquisitions.js"></script> -->
+    <script type="module" src="/test-1.f16a806b.js"></script>
+  
+
+</body></html>
