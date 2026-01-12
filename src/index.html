@@ -2,43 +2,50 @@
 <html lang="en">
   <head>
     <title>Chart.js example</title>
+    <link href="./index.css" type="text/css" rel="stylesheet" />
   </head>
   <body>
-    <div style="width: 500px"><canvas id="dimensions"></canvas></div>
-    <br />
-    <!-- <div style="width: 800px"><canvas id="acquisitions"></canvas></div> -->
+    <div class="grid grid-cols-2 gap-5 p-5">
+      <div class="grid grid-cols-1 col-span-1">
+        <div style="width: 500px">
+          <canvas id="dimensions"></canvas>
+          <div class="grid grid-cols-1">
+            <input type="number" id="ratioInput" />
 
-    <input type="number" id="ratioInput" />
-    <!-- <button id="testBut">Set Aspect Ratio</button> -->
-    <br />
+            <label>Chart Type</label>
+            <select name="chartType" id="chartTypeInput">
+              <option value="bar">Bar</option>
+              <option value="bubble">Bubble</option>
+              <option value="line">Line</option>
+              <option value="scatter">Scatter</option>
+            </select>
 
-    <label>Chart Type</label>
-    <select name="chartType" id="chartTypeInput">
-      <option value="bar">Bar</option>
-      <option value="bubble">Bubble</option>
-      <option value="line">Line</option>
-      <option value="scatter">Scatter</option>
-    </select>
-    <!-- <button id="chartTypeSubmit">Set Chart Type</button> -->
-    <br />
+            <label>X-Axis Scale Type</label>
+            <select name="xScaleType" id="xScaleTypeInput">
+              <option value="linear">Linear</option>
+              <option value="logarithmic">Logarithmic</option>
+            </select>
 
-    <label>X-Axis Scale Type</label>
-    <select name="xScaleType" id="xScaleTypeInput">
-      <option value="linear">Linear</option>
-      <option value="logarithmic">Logarithmic</option>
-    </select>
+            <label>Y-Axis Scale Type</label>
+            <select name="yScaleType" id="yScaleTypeInput">
+              <option value="linear">Linear</option>
+              <option value="logarithmic">Logarithmic</option>
+            </select>
 
-    <p></p>
-
-    <label>Y-Axis Scale Type</label>
-    <select name="yScaleType" id="yScaleTypeInput">
-      <option value="linear">Linear</option>
-      <option value="logarithmic">Logarithmic</option>
-    </select>
-
-    <p></p>
-
-    <button id="renderButton">Render</button>
+            <button
+              class="rounded-md bg-blue-600 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-blue-700 focus:shadow-none active:bg-blue-700 hover:bg-blue-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none ml-2"
+              type="button"
+              id="renderButton"
+            >
+              Render
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="grid col-span-1">
+        <span>TODO: add default graph here</span>
+      </div>
+    </div>
 
     <!-- <script type="module" src="acquisitions.js"></script> -->
     <script type="module" src="dimensions.js"></script>

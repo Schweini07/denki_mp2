@@ -11,7 +11,8 @@
   },
   "dependencies": {
     "@cubejs-client/core": "^0.31.0",
-    "chart.js": "^4.0.0"
+    "@tailwindcss/postcss": "^4.1.18",
+    "chart.js": "^4.0.0",
+    "tailwind": "^4.0.0"
   }
 }
-
