@@ -1,1 +1,13 @@
 @import "tailwindcss";
+
+.input {
+  @apply bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500;
+}
+
+.inputLabel {
+  @apply bg-gray-200 px-4 pt-6 pb-2 w-full rounded focus:ring-2 focus:ring-white outline-none;
+}
+
+.label {
+  @apply absolute text-slate-400 left-3 scale-75 top-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:top-4 peer-focus:scale-75 peer-focus:top-2 duration-300;
+}

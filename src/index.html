@@ -4,63 +4,142 @@
     <title>Chart.js example</title>
     <link href="./index.css" type="text/css" rel="stylesheet" />
   </head>
-  <body>
-    <div class="grid grid-cols-2 gap-5 p-5">
-      <div class="grid grid-cols-1 col-span-1">
-        <div style="width: 500px">
-          <canvas id="dimensions"></canvas>
-          <div class="grid grid-cols-1">
-            <label>Chart Type</label>
-            <select name="chartType" id="chartTypeInput">
+  <body class="bg-gray-900 text-gray-200 min-h-screen font-sans">
+    <!-- Header -->
+    <div class="w-full grid justify-center p-7">
+      <h1 class="mb-4 text-3xl font-bold md:text-5xl lg:text-6xl text-center">
+        <span
+          class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-emerald-500"
+        >
+          DENKI
+        </span>
+        MP2
+      </h1>
+      <p class="text-lg lg:text-xl text-center text-gray-400">
+        Design- & Scientific Thinking
+      </p>
+    </div>
+
+    <!-- Main Content -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 p-5 w-full">
+      <!-- Left Panel -->
+      <div class="flex flex-col gap-5">
+        <canvas
+          id="graph"
+          class="rounded-lg shadow-lg bg-gray-800 p-4"
+        ></canvas>
+
+        <div class="flex flex-col gap-4 bg-gray-800 p-5 rounded-lg shadow-lg">
+          <!-- Chart Type -->
+          <div>
+            <label for="chartTypeInput" class="block mb-1 text-gray-300"
+              >Chart Type</label
+            >
+            <select
+              id="chartTypeInput"
+              class="w-full rounded-md bg-gray-700 text-gray-200 p-2 focus:outline-none focus:ring-2 focus:ring-sky-400"
+            >
               <option value="bar">Bar</option>
               <option value="bubble">Bubble</option>
               <option value="line">Line</option>
               <option value="scatter">Scatter</option>
             </select>
-            <label>Ratio</label> <input type="number" id="ratioInput" />
-            <!-- <button id="testBut">Set Aspect Ratio</button> -->
-            <br />
-
-            <label>X-Axis Scale</label>
-            <br />
-            <label>Value</label> <input type="number" id="xScaleValueInput" />
-            <br />
-            <label>Type</label>
-            <select name="xScaleType" id="xScaleTypeInput">
-              <option value="linear">Linear</option>
-              <option value="logarithmic">Logarithmic</option>
-            </select>
-
-            <p></p>
-
-            <label>Y-Axis Scale</label>
-            <br />
-            <label>Value</label> <input type="number" id="yScaleValueInput" />
-            <br />
-            <label>Type</label>
-            <select name="yScaleType" id="yScaleTypeInput">
-              <option value="linear">Linear</option>
-              <option value="logarithmic">Logarithmic</option>
-            </select>
-
-            <p></p>
-
-            <button
-              class="rounded-md bg-blue-600 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-blue-700 focus:shadow-none active:bg-blue-700 hover:bg-blue-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none ml-2"
-              type="button"
-              id="renderButton"
-            >
-              Render
-            </button>
           </div>
+
+          <!-- Ratio -->
+          <div class="relative">
+            <input
+              id="ratioInput"
+              type="number"
+              placeholder="Ratio"
+              class="peer w-full rounded-md bg-gray-700 p-2 text-gray-200 focus:outline-none focus:ring-2 focus:ring-sky-400"
+            />
+            <!-- <label -->
+            <!--   for="ratioInpabsolute left-2 -top-2 text-gray-400 text-sm peer-focus:text-sky-400 transition-all"ut" -->
+            <!--   class="absolute left-2 -top-2 text-gray-400 text-sm peer-focus:text-sky-400 transition-all" -->
+            <!--   >Ratio</label -->
+            <!-- > -->
+          </div>
+
+          <!-- X Axis -->
+          <div>
+            <label class="block mb-1 text-gray-300">X-Axis Scale</label>
+            <input
+              id="xScaleValueInput"
+              type="number"
+              placeholder="Value"
+              class="w-full rounded-md bg-gray-700 p-2 text-gray-200 focus:outline-none focus:ring-2 focus:ring-sky-400 mb-2"
+            />
+            <select
+              id="xScaleTypeInput"
+              class="w-full rounded-md bg-gray-700 text-gray-200 p-2 focus:outline-none focus:ring-2 focus:ring-sky-400"
+            >
+              <option value="linear">Linear</option>
+              <option value="logarithmic">Logarithmic</option>
+            </select>
+          </div>
+
+          <!-- Y Axis -->
+          <div>
+            <label class="block mb-1 text-gray-300">Y-Axis Scale</label>
+            <input
+              id="yScaleValueInput"
+              type="number"
+              placeholder="Value"
+              class="w-full rounded-md bg-gray-700 p-2 text-gray-200 focus:outline-none focus:ring-2 focus:ring-sky-400 mb-2"
+            />
+            <select
+              id="yScaleTypeInput"
+              class="w-full rounded-md bg-gray-700 text-gray-200 p-2 focus:outline-none focus:ring-2 focus:ring-sky-400"
+            >
+              <option value="linear">Linear</option>
+              <option value="logarithmic">Logarithmic</option>
+            </select>
+          </div>
+
+          <!-- Render Button -->
+          <button
+            id="renderButton"
+            class="mt-4 w-full bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md shadow-md transition-all focus:outline-none focus:ring-2 focus:ring-blue-400"
+          >
+            Render
+          </button>
         </div>
       </div>
-      <div class="grid col-span-1">
-        <span>TODO: add default graph here</span>
+
+      <!-- Right Panel -->
+      <div>
+        <canvas
+          id="default"
+          class="rounded-lg shadow-lg bg-gray-800 p-4 w-full h-full"
+        ></canvas>
       </div>
     </div>
 
-    <!-- <script type="module" src="acquisitions.js"></script> -->
+    <!-- Footer -->
+    <footer
+      class="bg-gray-800 text-gray-400 rounded-md shadow-lg border border-gray-700 m-4 p-4"
+    >
+      <div
+        class="max-w-screen-xl mx-auto flex flex-col md:flex-row items-center justify-between"
+      >
+        <span class="text-sm"
+          >&copy; 2026 Real Laurenz and Tobias GmbH™. All Rights Reserved.</span
+        >
+        <ul
+          class="flex flex-wrap items-center mt-3 md:mt-0 space-x-4 text-sm font-medium"
+        >
+          <!-- links -->
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+    </footer>
+
+    <!-- scripts -->
     <script type="module" src="graph.js"></script>
+    <script type="module" src="default-graph.js"></script>
   </body>
 </html>
