@@ -48,6 +48,7 @@
 
           <!-- Ratio -->
           <div class="relative">
+            <label class="block mb-1 text-gray-300">Aspect Ratio</label>
             <input
               id="ratioInput"
               type="number"
@@ -63,6 +64,20 @@
 
           <!-- X Axis -->
           <div>
+            <!-- <label class="block mb-1 text-gray-300">X-Axis Min Value</label>
+            <input
+              id="xMinValueInput"
+              type="number"
+              placeholder="Minimum Value"
+              class="w-full rounded-md bg-gray-700 p-2 text-gray-200 focus:outline-none focus:ring-2 focus:ring-sky-400 mb-2"
+            />
+            <label class="block mb-1 text-gray-300">X-Axis Max Value</label>
+            <input
+              id="xMaxValueInput"
+              type="number"
+              placeholder="Maximum Value"
+              class="w-full rounded-md bg-gray-700 p-2 text-gray-200 focus:outline-none focus:ring-2 focus:ring-sky-400 mb-2"
+            /> -->
             <label class="block mb-1 text-gray-300">X-Axis Scale</label>
             <input
               id="xScaleValueInput"
@@ -81,6 +96,20 @@
 
           <!-- Y Axis -->
           <div>
+            <label class="block mb-1 text-gray-300">Y-Axis Min Value</label>
+            <input
+              id="yMinValueInput"
+              type="number"
+              placeholder="Minimum Value"
+              class="w-full rounded-md bg-gray-700 p-2 text-gray-200 focus:outline-none focus:ring-2 focus:ring-sky-400 mb-2"
+            />
+            <label class="block mb-1 text-gray-300">Y-Axis Max Value</label>
+            <input
+              id="yMaxValueInput"
+              type="number"
+              placeholder="Maximum Value"
+              class="w-full rounded-md bg-gray-700 p-2 text-gray-200 focus:outline-none focus:ring-2 focus:ring-sky-400 mb-2"
+            />
             <label class="block mb-1 text-gray-300">Y-Axis Scale</label>
             <input
               id="yScaleValueInput"
@@ -96,14 +125,6 @@
               <option value="logarithmic">Logarithmic</option>
             </select>
           </div>
-
-          <!-- Render Button -->
-          <button
-            id="renderButton"
-            class="mt-4 w-full bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md shadow-md transition-all focus:outline-none focus:ring-2 focus:ring-blue-400"
-          >
-            Render
-          </button>
         </div>
       </div>
 
